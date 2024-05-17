@@ -1,0 +1,12 @@
+[Unit]
+Description=Mint Agent Service
+
+[Service]
+ExecStartPre=/opt/mint/agent/verify.sh
+ExecStart=/opt/mint/agent/start.sh
+
+Restart=no
+EnvironmentFile=/etc/environment
+
+[Install]
+WantedBy=multi-user.target
